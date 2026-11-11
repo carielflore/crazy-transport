@@ -1,0 +1,120 @@
+Контрольный прогон для приёмки «Сквозняка»
+Дата: 2026-11-11
+Коммит: b12fb936543e00bc4c967f128681363c6daf2d11
+Среда контрольного запуска: Linux, Python 3.12.14
+
+$ python -m unittest tests.test_skvoznyak -q
+----------------------------------------------------------------------
+Ran 34 tests in 0.005s
+
+OK
+Код завершения: 0
+
+$ python -m unittest tests.test_scenarios -q
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+Код завершения: 0
+
+$ python -m unittest discover -s tests -t . -v
+test_tc33_delivery (tests.test_scenarios.TestScenarios.test_tc33_delivery)
+TC-33. Доставка через бурю. SPEC 4.2. ... ok
+test_tc34_calm (tests.test_scenarios.TestScenarios.test_tc34_calm)
+TC-34. Ветер исчез. SPEC 4.2. ... ok
+test_tc35_storm_limit (tests.test_scenarios.TestScenarios.test_tc35_storm_limit)
+TC-35. Оседлать бурю. SPEC 4.2. ... ok
+test_tc36_torn_sails (tests.test_scenarios.TestScenarios.test_tc36_torn_sails)
+TC-36. Паруса не выдержали. SPEC 4.2. ... ok
+test_tc37_last_charge (tests.test_scenarios.TestScenarios.test_tc37_last_charge)
+TC-37. Последний заряд. SPEC 4.2. ... ok
+test_tc38_three_sails (tests.test_scenarios.TestScenarios.test_tc38_three_sails)
+TC-38. На трёх парусах. SPEC 4.2. ... ok
+test_tc39_wrong_routes (tests.test_scenarios.TestScenarios.test_tc39_wrong_routes)
+TC-39. Через реку только по воздуху. SPEC 4.2. ... ok
+test_tc40_service (tests.test_scenarios.TestScenarios.test_tc40_service)
+TC-40. Починка между рейсами. SPEC 4.2. ... ok
+test_tc01_init (tests.test_skvoznyak.TestSkvoznyak.test_tc01_init)
+TC-01. Создание и типы. SPEC 3.2–3.3. ... ok
+test_tc02_init_values (tests.test_skvoznyak.TestSkvoznyak.test_tc02_init_values)
+TC-02. Диапазоны конструктора. SPEC 3.0, 3.2. ... ok
+test_tc03_init_types (tests.test_skvoznyak.TestSkvoznyak.test_tc03_init_types)
+TC-03. Типы и их приоритет. SPEC 3.0, 3.2. ... ok
+test_tc04_readonly (tests.test_skvoznyak.TestSkvoznyak.test_tc04_readonly)
+TC-04. Атрибуты только для чтения. SPEC 3.3. ... ok
+test_tc05_sail_controls (tests.test_skvoznyak.TestSkvoznyak.test_tc05_sail_controls)
+TC-05. Раскрытие и складывание. SPEC 3.4.1. ... ok
+test_tc06_takeoff (tests.test_skvoznyak.TestSkvoznyak.test_tc06_takeoff)
+TC-06. Взлёт и точный бюджет. SPEC 3.4.2. ... ok
+test_tc07_takeoff_priority (tests.test_skvoznyak.TestSkvoznyak.test_tc07_takeoff_priority)
+TC-07. Причины отказа взлёта и границы. SPEC 3.4.2, 6.3. ... ok
+test_tc08_repeated_takeoff (tests.test_skvoznyak.TestSkvoznyak.test_tc08_repeated_takeoff)
+TC-08. Повторный взлёт. SPEC 3.4.2. ... ok
+test_tc09_can_takeoff (tests.test_skvoznyak.TestSkvoznyak.test_tc09_can_takeoff)
+TC-09. Матрица готовности. SPEC 3.3. ... ok
+test_tc10_land (tests.test_skvoznyak.TestSkvoznyak.test_tc10_land)
+TC-10. Бесплатная посадка. SPEC 3.4.3. ... ok
+test_tc11_move_speed (tests.test_skvoznyak.TestSkvoznyak.test_tc11_move_speed)
+TC-11. Скорость, ограничитель и повреждённые паруса. SPEC 3.4.4. ... ok
+test_tc12_storm_threshold (tests.test_skvoznyak.TestSkvoznyak.test_tc12_storm_threshold)
+TC-12. Обычный и штормовой режим. SPEC 3.4.4. ... ok
+test_tc13_move_validation (tests.test_skvoznyak.TestSkvoznyak.test_tc13_move_validation)
+TC-13. Аргументы движения. SPEC 3.0, 3.4.4. ... ok
+test_tc14_wrong_medium (tests.test_skvoznyak.TestSkvoznyak.test_tc14_wrong_medium)
+TC-14. Запрет земли и воды. SPEC 3.4.4. ... ok
+test_tc15_not_airborne (tests.test_skvoznyak.TestSkvoznyak.test_tc15_not_airborne)
+TC-15. Движение не заменяет взлёт. SPEC 3.4.4. ... ok
+test_tc16_move_budget (tests.test_skvoznyak.TestSkvoznyak.test_tc16_move_budget)
+TC-16. Точный и недостаточный бюджет. SPEC 3.4.4. ... ok
+test_tc17_calculate_pure (tests.test_skvoznyak.TestSkvoznyak.test_tc17_calculate_pure)
+TC-17. Расчёт без проверки возможности полёта. SPEC 3.4.5. ... ok
+test_tc18_calculate_validation (tests.test_skvoznyak.TestSkvoznyak.test_tc18_calculate_validation)
+TC-18. Аргументы расчёта. SPEC 3.0, 3.4.5. ... ok
+test_tc19_wind_event (tests.test_skvoznyak.TestSkvoznyak.test_tc19_wind_event)
+TC-19. Смена ветра и аварийная посадка. SPEC 3.4.6. ... ok
+test_tc20_wind_invalid (tests.test_skvoznyak.TestSkvoznyak.test_tc20_wind_invalid)
+TC-20. Неверный ветер не вызывает посадку. SPEC 3.0, 3.4.6. ... ok
+test_tc21_damage_mass (tests.test_skvoznyak.TestSkvoznyak.test_tc21_damage_mass)
+TC-21. Потеря несущей способности. SPEC 3.4.7. ... ok
+test_tc22_damage_minimum (tests.test_skvoznyak.TestSkvoznyak.test_tc22_damage_minimum)
+TC-22. Минимум три паруса. SPEC 3.4.7. ... ok
+test_tc23_damage_floor (tests.test_skvoznyak.TestSkvoznyak.test_tc23_damage_floor)
+TC-23. Нижняя граница числа парусов. SPEC 3.4.7. ... ok
+test_tc24_repair (tests.test_skvoznyak.TestSkvoznyak.test_tc24_repair)
+TC-24. Ремонт и запрет ремонта в воздухе. SPEC 3.4.8. ... ok
+test_tc25_fold_in_air (tests.test_skvoznyak.TestSkvoznyak.test_tc25_fold_in_air)
+TC-25. Запрет складывания в полёте. SPEC 3.4.1. ... ok
+test_tc26_recharge (tests.test_skvoznyak.TestSkvoznyak.test_tc26_recharge)
+TC-26. Зарядка на земле и потолок. SPEC 3.4.9. ... ok
+test_tc27_recharge_invalid (tests.test_skvoznyak.TestSkvoznyak.test_tc27_recharge_invalid)
+TC-27. Проверки зарядки раньше положения. SPEC 3.0, 3.4.9. ... ok
+test_tc28_obstacle_matrix (tests.test_skvoznyak.TestSkvoznyak.test_tc28_obstacle_matrix)
+TC-28. Матрица препятствий. SPEC 3.4.10. ... ok
+test_tc29_obstacle_invalid (tests.test_skvoznyak.TestSkvoznyak.test_tc29_obstacle_invalid)
+TC-29. Аргументы препятствий. SPEC 3.4.10. ... ok
+test_tc30_status (tests.test_skvoznyak.TestSkvoznyak.test_tc30_status)
+TC-30. Снимок состояния. SPEC 3.4.11. ... ok
+test_tc31_exceptions (tests.test_skvoznyak.TestSkvoznyak.test_tc31_exceptions)
+TC-31. Иерархия и поля исключения. SPEC 6.1–6.2. ... ok
+test_tc32_route_limit (tests.test_skvoznyak.TestSkvoznyak.test_tc32_route_limit)
+TC-32. Граница суммарного пути. SPEC 3.4.4–3.4.5. ... ok
+test_tc41_attributes_cannot_be_deleted (tests.test_skvoznyak.TestSkvoznyak.test_tc41_attributes_cannot_be_deleted)
+TC-41. Удаление публичных атрибутов запрещено. SPEC 3.3; C-1. ... ok
+test_tc42_move_preserves_other_attributes (tests.test_skvoznyak.TestSkvoznyak.test_tc42_move_preserves_other_attributes)
+TC-42. Движение меняет только энергию и путь. SPEC 3.0, 3.4.4; C-2. ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.005s
+
+OK
+Код завершения: 0
+
+$ python example.py
+Создание: на земле, паруса сложены, энергия 100.0, путь 0.0 км, ветер 20.0 км/ч
+Взлёт: в воздухе, паруса раскрыты, энергия 95.0, путь 0.0 км, ветер 20.0 км/ч
+Обычный полёт: 10 км за 0.50 ч
+После первого участка: в воздухе, паруса раскрыты, энергия 85.0, путь 10.0 км, ветер 20.0 км/ч
+Полёт в бурю: 20 км за 0.50 ч
+После второго участка: в воздухе, паруса раскрыты, энергия 45.0, путь 30.0 км, ветер 40.0 км/ч
+Посадка и зарядка: на земле, паруса сложены, энергия 75.0, путь 30.0 км, ветер 40.0 км/ч
+Код завершения: 0
